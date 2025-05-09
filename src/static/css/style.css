@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Sakkal Majalla';
+    src: url("{{ url_for('static', filename='fonts/Sakkal Majalla Regular.ttf') }}") format('truetype');
+}
+
+body {
+    font-family: 'Sakkal Majalla', Arial, sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: #fcfcfc; /* رمادي فاتح جداً أقرب للأبيض */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #e9ecef; /* لون أزرق فاتح مشابه للصورة */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+header h1 {
+    color: #0056b3; /* لون أزرق أغمق للعنوان الرئيسي */
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+header p {
+    color: #555;
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+#about-button {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* تم تغيير الموقع إلى اليسار بناءً على طلب "جانبي" */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#about-button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.close-button {
+    color: #aaa;
+    float: left; /* ليكون على الجانب الآخر من النص العربي */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.container h2 {
+    color: #0056b3; /* لون أزرق متناسق */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.instructions {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+textarea#poetry-input {
+    width: calc(100% - 22px); /* تعديل العرض ليناسب padding و border */
+    min-height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Sakkal Majalla', Arial, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+.buttons button {
+    background-color: #007bff; /* لون أزرق للأزرار الرئيسية */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Sakkal Majalla', Arial, sans-serif;
+    font-size: 1.1em;
+    margin-left: 10px; /* تعديل لـ margin-left بسبب RTL */
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+.buttons button#clear-button {
+    background-color: #dc3545; /* لون أحمر لزر المسح */
+}
+
+.buttons button#clear-button:hover {
+    background-color: #c82333;
+}
+
+.buttons button#copy-button {
+    background-color: #6c757d; /* لون رمادي لزر النسخ */
+}
+
+.buttons button#copy-button:hover {
+    background-color: #5a6268;
+}
+
+#results-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#results-container h2 {
+    font-size: 1.5em;
+    color: #0056b3;
+}
+
+#results-output {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 100px;
+    border: 1px solid #e0e0e0;
+    white-space: pre-wrap; /* للحفاظ على تنسيق النص المنسوخ */
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* استايلات مشابهة لملف HTML الأصلي للنتائج */
+.meter{color:#c0392b;font-size:1.3em; font-weight: bold; margin-top:10px;}
+.original{color:#2980b9;font-size:1.2em; margin-bottom: 5px;}
+.processed{color:#27ae60;font-size:1.1em; margin-bottom: 10px;}
+.tafeelat{color:#d35400;font-size:1em; background:#fcf8e3;padding:10px;border-radius:5px; margin-bottom:10px;}
+.result{margin-bottom:20px; border-bottom:1px solid #ecf0f1; padding-bottom:20px;}
+.result:last-child {border-bottom: none;}
+.separator{border-bottom:2px solid #ecf0f1;margin:20px 0;}
+ul{list-style:none;padding-right:0;}
+li{background:#ecf0f1;margin:5px 0;padding:10px;border-radius:5px; font-size: 1em;}
+
+

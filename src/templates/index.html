@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المختار العروضي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>المختار العروضي</h1>
+        <p>موقع تفاعلي لاستخراج أوزان الشعر العربي، وبيان زحافاته وعلله</p>
+        <button id="about-button">عن الموقع</button>
+    </header>
+
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>للتواصل</h2>
+            <p>فكرة وتصميم وتنفيذ</p>
+            <p>أبو الطّيّب أيمن الطّيّب بن نجي</p>
+            <br>
+            <h2>للتّواصل</h2>
+            <p>البريد الشّبكيّ: aymen.nji@gmail.com</p>
+            <br>
+            <h2>عن الموقع التفاعلي</h2>
+            <p>هذا الموقع هو نسخة تفاعلية على الويب من برنامج (المختار اللّغويّ) لمعالجة اللغة العربية.</p>
+            <p>يتيح الموقع إمكانية البحث عن الأوزان والمشتقات والسياقات في النصوص العربية، مع إضافة ميزة تحميل الملفات النصية للبحث فيها.</p>
+            <p>حقوق النشر محفوظة للمبرمج © 2025</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <h2>أدخل الأبيات الشعرية (بحد أقصى 10 أبيات):</h2>
+            <p class="instructions">أدخل بيتاً واحداً في كل سطر، وافصل بين الشطر الأول والثاني باستخدام ثلاثة نجمات (***). مثال:<br>قِفَا نَبْكِ مِنْ ذِكْرَى حَبِيبٍ ومَنْزِلِ *** بِسِقْطِ اللَّوَى بَيْنَ الدَّخُولِ فَحَوْمَلِ</p>
+            <textarea id="poetry-input" placeholder="أدخل الأبيات هنا . . ."></textarea>
+            <div class="buttons">
+                <button id="analyze-button">تحليل الأبيات</button>
+                <button id="clear-button">مسح المدخلات والنتائج</button>
+                <button id="copy-button">نسخ النتائج</button>
+            </div>
+            <div id="results-container">
+                <h2>النتائج:</h2>
+                <div id="results-output"></div>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
